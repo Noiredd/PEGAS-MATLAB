@@ -96,7 +96,7 @@ function [r, v, last] = CSEroutine(r0, v0, dt, last)
     else
         [dtmax, ~, ~, ~] = KTTI(xmax, sigma0s, alphas, kmax);
         if dtmax<dts
-            while dtmax>=dts
+            while dtmax<dts
                 dtmin = dtmax;
                 xmin = xmax;
                 xmax = 2*xmax;
