@@ -140,6 +140,7 @@ alt      | m     | Altitude above sea level. *Ignored if type == 1.*
 t        | s     | Mission elapsed time. *Ignored if type == 0.*
 r        | m     | Vehicle position relative to origin (XYZ vector). *Ignored if type == 0.*
 v        | m/s   | Vehicle velocity (XYZ vector). *Ignored if type == 0.*
+
 Generators:  
 `createLaunchSite` - creates a type 0 initial struct (launch site),  
 `resultsToInit` - converts a [results](#results) struct to a type 1 initial struct.  
