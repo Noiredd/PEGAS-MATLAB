@@ -17,8 +17,8 @@ function [init] = resultsToInit(results)
     %Handle UPFG state passing. Copy final state from results, create a
     %dummy state otherwise.
     if isfield(results, 'UPFG')
-        init().upfg = results.UPFG;
+        init.upfg = results.UPFG;
     else
-        init().upfg = struct();
+        init.upfg = struct();
     end;
 end

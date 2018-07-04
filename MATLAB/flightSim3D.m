@@ -386,9 +386,9 @@ function [results] = flightSim3D(vehicle, stage, initial, control, jettison, dt)
     %Add debug data if it was created, add a dummy struct otherwise (see
     %below comment on UPFG persistence).
     if exist('dbg', 'var')==1
-        plots().DEBUG = dbg;
+        plots.DEBUG = dbg;
     else
-        plots().DEBUG = struct();
+        plots.DEBUG = struct();
     end;
     orbit = struct('SMA', 0, 'ECC', 0, 'INC', 0,...
                    'LAN', 0, 'AOP', 0, 'TAN', 0);
@@ -415,11 +415,11 @@ function [results] = flightSim3D(vehicle, stage, initial, control, jettison, dt)
     %set of fields, so in case no UPFG was ever called in a stage, a dummy
     %is created.
     if exist('upfg_internal', 'var')==1
-        results().UPFG = upfg_internal;
+        results.UPFG = upfg_internal;
     elseif isfield(initial, 'upfg')
-        results().UPFG = initial.upfg;
+        results.UPFG = initial.upfg;
     else
-        results().UPFG = struct();
+        results.UPFG = struct();
     end;
     [results.Apoapsis, results.Periapsis, results.Orbit.SMA,...
                     results.Orbit.ECC, results.Orbit.INC,...
